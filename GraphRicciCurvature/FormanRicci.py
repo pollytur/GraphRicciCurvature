@@ -99,8 +99,8 @@ class FormanRicci:
 
                 self.G[v1][v2]["formanCurvature"] = w_e * (w_v1 / w_e + w_v2 / w_e - (ev1_sum + ev2_sum))
 
-                logger.debug("Source: %s, target: %d, Forman-Ricci curvature = %f  " % (
-                    v1, v2, self.G[v1][v2]["formanCurvature"]))
+                #logger.debug("Source: %s, target: %d, Forman-Ricci curvature = %f  " % (
+                   # v1, v2, self.G[v1][v2]["formanCurvature"]))
 
         elif self.method == "augmented":
             # Edge Forman curvature
@@ -130,8 +130,8 @@ class FormanRicci:
 
                 self.G[v1][v2]["formanCurvature"] = w_e * (sum_ef + sum_ve - math.fabs(sum_ehef - sum_veeh))
 
-                logger.debug("Source: %s, target: %d, Forman-Ricci curvature = %f  " % (
-                    v1, v2, self.G[v1][v2]["formanCurvature"]))
+                #logger.debug("Source: %s, target: %d, Forman-Ricci curvature = %f  " % (
+                    #v1, v2, self.G[v1][v2]["formanCurvature"]))
 
         else:
             assert True, 'Method %s not available. Support methods: {"1d","augmented"}' % self.method
@@ -149,5 +149,5 @@ class FormanRicci:
             else:
                 self.G.nodes[n]['formanCurvature'] = fcsum
 
-            logger.debug("node %d, Forman Curvature = %f" % (n, self.G.nodes[n]['formanCurvature']))
+            #logger.debug("node %d, Forman Curvature = %f" % (n, self.G.nodes[n]['formanCurvature']))
         logger.debug("Forman curvature (%s) computation done." % self.method)
